@@ -1,0 +1,87 @@
+.card-columns {
+    @include media-breakpoint-only(xl) {
+        column-count: 4;
+    }
+
+    @include media-breakpoint-only(lg) {
+        column-count: 3;
+    }
+
+    @include media-breakpoint-only(md) {
+        column-count: 2;
+    }
+
+    @include media-breakpoint-only(sm) {
+        column-count: 2;
+    }
+
+    margin: 0em calc(2vw + 15px);
+}
+
+.featured-title {
+    margin: 1em calc(2vw + 15px);
+    color: #333;
+    font-weight: 600;
+    font-size: 3em;
+
+}
+
+.card {
+    border: none;
+    transition: all 0.25s;
+
+    &__meta {
+        position: relative;
+        z-index: 3;
+        position: absolute;
+        bottom: 0px;
+        color: white;
+        transition: all .25s;
+        padding: 25px;
+        font-size: 20px;
+        opacity: 0;
+
+
+        &__name-lable {
+            font-weight: 700;
+
+        }
+
+        &__name {
+            font-weight: 700;
+
+        }
+
+        &__desc {
+            display: block;
+            font-size: 12px;
+        }
+    }
+
+    img {
+        width: 100%;
+        transition: all 0.5s;
+    }
+
+    &:after {
+        content: "";
+        background: rgba($color: #000, $alpha: .25);
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 2;
+        top: 0;
+        opacity: 0;
+        transition: all .5s;
+    }
+
+    &:hover &__meta {
+
+        opacity: 1;
+    }
+
+    &:hover::after {
+        opacity: 1;
+        cursor: pointer;
+    }
+}

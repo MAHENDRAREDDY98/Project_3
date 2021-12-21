@@ -1,0 +1,113 @@
+@import "../vendor/bootstrap/scss/vendor/rfs";
+
+header {
+    position: relative;
+    background: url("/src/images/header-bg.jpeg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1;
+
+    &:after {
+
+        background: rgba(#000, .25);
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 2;
+        top: 0;
+    }
+}
+
+// bootstrap navbar override
+
+.navbar-brand {
+    font-weight: 700;
+    @include rfs(35);
+    color: white !important;
+    z-index: 3;
+}
+
+.navbar-nav {
+    z-index: 3;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 700;
+    color: white !important;
+    text-transform: uppercase;
+    transition: all 0.25s;
+    font-size: 1em;
+
+    &:hover {
+        color: #f4f4f4 !important;
+    }
+}
+
+.header-title {
+    position: relative;
+
+    padding: {
+        top: 15em - 6.8em;
+        bottom: 15em;
+    }
+
+    color: white;
+    z-index: 3;
+
+    // modifier for blog pabe
+    &--blog-page {
+        text-align: left;
+    }
+
+    &__h1 {
+        font-size: 3em;
+        font-weight: 600;
+        margin-bottom: 0em;
+    }
+
+    &__search {
+        margin-top: 2.5em;
+
+
+        .btn {
+
+            @include media-breakpoint-only(xs) {
+                width: 5em;
+            }
+
+            @include media-breakpoint-only(sm) {
+                width: 5em;
+            }
+
+            @include media-breakpoint-only(md) {
+                width: 6em;
+            }
+
+            @include media-breakpoint-only(lg) {
+                width: 8em;
+            }
+
+            @include media-breakpoint-only(xl) {
+                width: 10em;
+            }
+        }
+    }
+
+    &__p {
+        font-size: 0.8em;
+        margin-top: 1em;
+    }
+
+    &__meta {
+        span {
+            font-size: 1.2em;
+        }
+
+        &__author {
+            a {
+                color: white !important;
+            }
+        }
+    }
+}
